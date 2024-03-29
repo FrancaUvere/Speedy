@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="{{url_for('static', filename='styles/profile.css')}}">
+
+<div class="profile">
+  <div class="profile-box">
+    <div class="profile-img">
+      <img src="{{ url_for('static', filename='images/profile.png') }}" alt="" >
+    </div>
+    <p class="profile-text">Profile</p>
+    <div class="email-num">
+      <p>{{ customer.first_name }}</p>
+      <p>{{ customer.phone_number }}</p>
+    </div>
+    <hr>
+    <p class="email">{{ customer.email}}</p>
+    <hr>
+    <div class="save">
+      <a href="/">Edit</a>
+    </div>
+  </div>
+  <div class="account-box">
+    <div class="my-account">
+      <div class="account-edit">
+        <p>My Accounts</p>
+        <a href="/">Edit</a>
+      </div>
+      <div class="act-account">
+        <div>
+          <p>Active account</p>
+          <p>{{ account.account_number }}</p>
+        </div>
+        <div class="acc_type">
+          <p>{{ account.acc_type | default('account type')}}</p>
+        </div>
+      </div>
+      <div class="blk-account">
+        <div>
+          <p>Blocked account</p>
+          <p>account number</p>
+        </div>
+        <div class="acc_type">
+          <p>{{ account.acc_type | default('account type')}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="address">
+      <div class="address-edit">
+        <p>Address</p>
+        <a href="/">Edit</a>
+      </div>
+      <div class="city-state" >
+        <p>State: {{ address.state | default('state') }}</p>
+        <p>City: {{ address.city | default('city') }}</p>
+      </div>
+      <div class="name-number">
+        <p>Street Number: {{ address.street_number | default('0') }}</p>
+        <p>Street Name: {{ address.street_name | default('Opus') }}</p>
+      </div>
+    </div>
+  </div>
+</div>

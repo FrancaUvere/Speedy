@@ -1,0 +1,84 @@
+{% extends 'nav-bar.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/transactions.css') }}">
+<div class="transactions">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  <div class="top-btn">
+    <div class="account">
+      <button id="previous">&#10094;</button>
+      {% for account in accounts %}
+      <div class="bal" id="{{account.id}}">
+      <p class="acc-num">{{ account.account_number}}</p>
+      <p class="acc-bal">{{ account.acc_type }}</p>
+      <p class="acc-bal-ngn">&#8358;{{ account.parse_balance()}}</p>
+      </div>
+      {% endfor %}
+      <button id="next">&#10095;</button>
+    </div>
+    <div class="act-btn">
+      <div>
+      <button class="transfer" id="show"> Show Transaction History</button></div>
+      <a class="bills" id="open">Generate E-statement</a>
+    </div>
+  </div>
+  <table class="list-head">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Transfer Details</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for transaction in transactions %}
+      {% include '_transactions.html' %}
+      {% endfor %} 
+    </tbody>
+   
+  </table>
+
+</div>
+<div id="pop_up">
+  <div id="gen">
+    <form action="" method="POST" novalidate>
+      {{form.hidden_tag()}}
+        <p id="title"><b>Generate E-Statement</b></p>
+      <div id="start">
+        <div>
+          <p>{{form.start.label}}</p>
+          <p>{{form.start(class="input")}}</p>
+        </div>
+        {% for error in form.start.errors %}
+        <p>{{error}}</p>
+        {% endfor %}
+      </div>
+      <div id="end">
+        <div>
+          <p>{{form.end.label}}</p>
+          <p>{{form.end(class="input")}}</p>
+        </div>
+        {% for error in form.start.errors %}
+        <p>{{error}}</p>
+        {% endfor %}
+      </div>
+      <div id="sub">
+        {{form.submit(id="submit")}}
+        <p id="cancel">Cancel</p>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/script4.js') }}"></script>
+
+{% endblock %}

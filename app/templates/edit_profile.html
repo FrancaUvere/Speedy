@@ -1,0 +1,86 @@
+{% extends 'user_profile_base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/user_profile_base.css')}}">
+
+<div id="form_container">
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag()}}
+        <p id="title">Edit your Info</p>
+        <div class="username">
+            <p>{{ form.username.label }} </p>
+            <p>{{ form.username(placeholder='username', size=70, class="input", id="lastname", value=customer.username) }}</p>
+            {% for error in form.username.errors %}
+             <p class="error"> {{ error }}</p>
+             {% endfor %}
+        </div>
+        <div class="phone_no">
+            <p> {{form.phonenumber.label }} </p>
+            <p> {{form.phonenumber(placeholder='08098923001', size=70, class="input", value=customer.phone_number) }}</p>
+            {% for error in form.phonenumber.errors %}
+             <p class="error"> {{ error }}</p>
+             {% endfor %}
+        </div>
+        <div id="submit/cancel">
+            {{ form.submit(id="submit")}}
+        </div>
+    </form>
+    <form action="" method="POST" novalidate>
+        {{ form2.hidden_tag()}}
+        <p id="title">Update your Address</p>
+        <div id="app_ num">
+            <p> {{ form2.apartment_number.label }}</p>
+            <p> {{ form2.apartment_number(size=70, placeholder="04", class="input", value=customer.get_address().apartment_number) }}</p>
+            {% for error in form2.apartment_number.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div id="strt_name">
+            <p> {{ form2.street_name.label }}</p>
+            <p> {{ form2.street_name(size=70, class="input", value=customer.get_address().street_name)}}</p>
+            {% for error in form2.street_name.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div id="city">
+            <p> {{form2.city.label}}</p>
+            <p> {{ form2.city(size=70, class="input", value=customer.get_address().city)}} </p>
+            {% for error in form2.city.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <p> {{form2.state.label}}</p>
+            <p> {{form2.state(size=70, class="input", value=customer.get_address().state)}}</p>
+            {% for error in form2.state.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <p> {{form2.country.label }}</p>
+            <p> {{form2.country(size=70, class="input", value=customer.get_address().country)}}</p>
+            {% for error in form2.country.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <p> {{form2.postal_code.label }}</p>
+            <p> {{form2.postal_code(size=70, class="input", value=customer.get_address().postal_code)}}</p>
+            {% for error in form2.postal_code.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <p> {{ form2.address_line_2.label }}</p>
+            <p> {{form2.address_line_2(size=70, class="input", value=customer.get_address().address_line_2)}}</p>
+            {% for error in form2.address_line_2.errors %}
+            <p class="error"> {{ error }}</p>
+            {% endfor %}
+        </div>
+        <div id="submit/cancel">
+            {{ form2.submit(id="submit2")}}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Accpunt | Speedy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/transactions_2.css')}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+      </style>
+</head>
+<body>
+{% include 'nav-bar.html' %}
+<div id="transactions_container">
+  <div id="top">
+    <div id="display">
+      <p>{{ account.account_number}}</p>
+      <p>NGN {{account.balance}}</p>
+    </div>
+    <div id="transaction_buttons">
+      <a>Make Transfer</a>
+      <a>Points and Rewards</a>
+
+    </div>
+  </div>
+  <div id="bottom">
+
+  </div>
+</div>
+
+</body>
+</html>

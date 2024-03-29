@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.nav-bar {
+  min-width: 1015px;
+  display: flex;
+  justify-content: space-between;
+  /* position: fixed;
+  width: 100%;
+  top: 0; */
+  padding: 0 10%;
+  height: 70px;
+  align-items: center;
+  background: #FFF;
+  box-shadow: 0px 10px 4px -1px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: #63153F;
+  text-align: center;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.links a {
+  color: #63153F;
+  padding: 0 33px;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+}
+
+.profile a {
+  padding: 10px 15px;
+  background: #E39FF6;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.links{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.profile{
+  width: 10%;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .nav-bar{
+    padding: 0 5%;
+  }
+
+
+  .link a{
+    padding: 0 20px;
+  }
+}
+
+
+
+/*scrollbar*/
+::-webkit-scrollbar{
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #110526;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+  display: block;
+}
+
+::-webkit-scrollbar-track{
+  background-color: silver;
+}

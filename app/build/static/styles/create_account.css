@@ -1,0 +1,189 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('../images/bank_image.png');
+}
+#container{
+    height: 100vh;
+}
+
+header{
+    background-color: white;
+}
+
+#form_container{
+    width: 600px;
+    margin: 40px auto;
+    height: 30em;
+    padding: 20px;
+    border: 2px solid rgb(24, 41, 97);
+    border-radius: 20px;
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.pop {
+    display: none;
+}
+
+form p{
+    padding:  5px 10px;
+    font-size: 16px;
+}
+form #title{
+    font-family: 'Iceberg';
+    font-size: 25px;
+    padding: 10px;
+    color: rgb(13, 24, 61);
+    margin-bottom: 10px;
+}
+
+.input, .inpu{
+    padding: 10px;
+    margin-right: 10px;
+    font-family: 'Baloo Thambi 2';
+    font-weight: bold;
+    border:  1px solid silver;
+    border-radius: 7px;
+    
+}
+
+
+button, #submit{
+    margin: 10px;
+    margin-bottom: 0px;
+    width: 150px;
+    padding: 10px 5px;
+    background-color: rgb(99,21,63);
+    border:  1px solid silver;
+    color: white;
+    border-radius: 14px;
+}
+
+button:hover, #submit:hover{
+    background-color: rgb(226, 164, 198);
+    border:  none;
+}
+
+.input:focus{
+    outline: 2px solid rgb(13, 24, 61);
+}
+
+.pop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 213, 213, 0.1); /* Adjust the opacity as needed */
+    z-index: 9999;
+    color: white;
+    padding: 20px;
+    align-items: center;
+}
+
+#message{
+    width: 500px;
+    height: fit-content;
+    background-color: white;
+    margin: 0 auto;
+    border: 2px solid rgb(190, 166, 187);
+    padding: 5px;
+    box-shadow: 0px 4px 31px 6px rgba(0,0,0,0.75);
+}
+
+#message button{
+    width: 100px;
+    position: relative;
+    top: -10px;
+    background-color: rgb(99,21,63);
+    color: white;
+    border-radius: 14px;
+}
+
+#message a{
+    position: relative;
+    top: 2px;
+    padding: 5px 25px;
+    background-color: white;
+    text-decoration: none;
+    color: #110526;
+}
+
+#message p{
+    padding: 20px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+#message div{
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    margin-left: 10px;
+}
+
+#submit{
+    margin-left: 20px;
+    margin-top: 35px;
+}
+
+#cancel{
+    position: relative;
+    left: 15em;
+    top: -3.5em;
+
+}
+
+.error{
+    color: red;
+    font-size: 10px;
+    margin-left: 20px;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #110526;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+    display: block;
+}
+
+::-webkit-scrollbar-track{
+    background-color: silver;
+}
+
+a#cancel{
+    margin-left: 10px;
+    padding: 8px 53px;
+    background-color: rgb(99,21,63);
+    border:  1px solid silver;
+    color: white;
+    border-radius: 14px;
+    position: relative;
+    top: -32px;
+  
+}
+
+#new{
+    height: 400px;
+    padding-bottom: 20px;
+}
+
+#new #submit{
+    position: relative;
+    top: -20px;
+}
+

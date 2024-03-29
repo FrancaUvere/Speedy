@@ -1,0 +1,80 @@
+{% extends 'user_profile_base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/user_profile.css')}}">
+
+<div id="user_acc">
+    <p id="title">Edit User Details</p>
+    <p class="title user_name">Hello, {{customer.username}}</p>
+    <div id="email_edit">
+        <div id="form_user">
+            <form action="" method="POST" novalidate>
+                {{form1.hidden_tag()}}
+                <div id="email">
+                    <p>{{form1.email.label}}</p>
+                    <p>{{form1.email(size=70, class="input", id="input_email", value=customer.email)}}</p>
+                    {% for error in form1.email.errors %}
+                    <p class="er">{{error}}</p>
+                    {% endfor %}
+                </div>
+                <div id="submit/cancel">
+                    {{form1.submit(class="use_acc")}}
+                </div>
+            </form>
+            <div id="del_div">
+                <a id="change" href="{{url_for('change_password', username=customer.username)}}">Change Password</a>
+                <a id="del_acc"  href="{{url_for('delete_account', username=customer.username)}}">Delete User Account</a>
+            </div>
+            </div>
+    </div>
+    {% if form2 %}
+    <div id="password_change">
+        <div id="form2_user">
+            <form action="" method="POST" novalidate>
+                {{ form2.hidden_tag() }}
+                <p id="title">Change Your Password </p>
+                <div id="old_pas">
+                    <p>{{form2.old_password.label }}</p>
+                    <p>{{form2.old_password(class="input", size=40)}}</p>
+                    {% for error in form2.old_password.errors %}
+                    <p class="er">{{error}}</p>
+                    {% endfor %}
+                </div>
+                <div id="new_pas">
+                    <p>{{form2.new_password.label}}</p>
+                    <p>{{form2.new_password(class="input", size=40)}}</p>
+                    {% for error in form2.new_password.errors %}
+                    <p class="er">{{error}}</p>
+                    {% endfor %}
+                </div>
+                <div id="submit/cancel">
+                    {{form2.submit(class="use_acc")}}
+                </div>
+            </form>
+            <a id="pass_can" href="{{url_for('user_acc', username=customer.username)}}">Cancel</a>
+        </div>
+    </div>
+    {% endif %}
+    {% if form3 %}
+    <div id="password_change">
+        <div id="form2_user">
+            <form action="" method="POST" novalidate>
+                {{form3.hidden_tag()}}
+                <p id="title">Delete your Account</p>
+                <div id="password">
+                    <p>{{form3.password.label}}</p>
+                    <p>{{form3.password(class="input", size=40)}}</p>
+                </div>
+                <p class="warning wid">*Please note, your Speedy financial accounts will be deleted along with your Speedy user account</p>
+                <div id="submit/cancel">
+                    <p>{{form3.delete(class="del")}}</p>
+                </div>
+            </form>
+            <a id="cancel_del" href="{{url_for('user_acc', username=customer.username)}}">Cancel</a>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

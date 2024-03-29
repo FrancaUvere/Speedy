@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Transfer - {{username}} | Speedy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/transfer.css') }}">
+</head>
+<body>
+    {% include 'nav-bar.html' %}
+    <div id="make_transfer">
+        <div class="account">
+            <button id="previous">&#10094;</button>
+            {% for account in accounts %}
+            <div class="acc" id="{{account.id}}">
+            <p>{{ account.account_number}}</p>
+            <p>{{ account.acc_type }}</p>
+            <p>&#8358;{{ account.parse_balance()}}</p>
+            </div>
+            {% endfor %}
+            <button id="next">&#10095;</button>
+        </div>
+       
+        <div id="transfer_body">
+            <div id="beneficiary">
+                <div id="state">
+                    <p><a>Frequent Beneficiaries</a></p>
+                    <p><a>Find Beneficiary</a></p>
+                </div>
+                <div class="transfer_input ben">No Frequent Beneficiaries Available</div>
+            </div>
+            <form action="" method="POST" novalidate>
+                {{form.hidden_tag()}}
+                <div id="bank_name">
+                    <p>{{form.bank_name.label}}</p>
+                    <select name="{{form.bank_name.name}}" class="transfer_input">
+                        {% for choice, label in form.bank_name.choices %}
+                        <option value="{{ choice }}">{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    {% for error in form.bank_name.errors %}
+                        <p class="error"> {{ error }}</p>
+                    {% endfor %}
+                </div>
+                <div id="beneficiary_account">
+                    <p>{{ form.acc_number.label}}</p>
+                    <p>{{ form.acc_number(size=70, class="transfer_input", id="acc_no") }}</p>
+                    {% for error in form.acc_number.errors %}
+                        <p class="error" id="no_err"> {{ error }}</p>
+                    {% endfor %}
+                </div>
+                <div id="check">
+
+                </div>
+                <div id="amount">
+                    <p>{{form.amount.label}} <span>(minimum is 50 naira)</span></p>
+                    <p>{{form.amount(size=70, class="transfer_input", id="amount_in")}}</p>
+                    <p class="error" id="erro"></p>
+                    {% for error in form.amount.errors %}
+                        <p class="error" id="err"> {{ error }}</p>
+                    {% endfor %}
+                </div>
+                <div id="description">
+                    <p>{{form.description.label}}</p>
+                    <p>{{form.description(row=4, cols=70, class="transfer_input")}}</p>
+                    {% for error in form.description.errors %}
+                        <p class="error"> {{ error }}</p>
+                    {% endfor %}
+                </div>
+                <div id="pin">
+                    <p>{{form.pin.label}}</p>
+                    <p>{{form.pin(size=16, class="transfer_input", id="pin_no")}}</p>
+                    {% for error in form.pin.errors %}
+                        <p class="error"> {{ error }}</p>
+                    {% endfor %}
+                </div>
+                <div id="sub">
+                    {{form.submit(id="submit")}}
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script3.js') }}"></script>
+</body>
+</html>

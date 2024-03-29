@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ username}}-Profile Page | Speedy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/user_profile.css')}}">
+</head>
+<body>
+    {% include 'nav-bar.html' %}
+    <div id="container">
+        <div id="profile_page">
+            <div id="nav_bar">
+                <a id="back"> <span>&#x276E;</span>Back</a>
+                <a href="{{ url_for('edit_profile', username=customer.username)}}">Edit profile</a>
+                <a href="{{url_for('manage_accounts', username=customer.username)}}">Manage Accounts</a>
+                <a href="{{url_for('user_acc', username=customer.username)}}">Manage User Account</a>
+                <a  id="logout">Logout</a>
+            </div>
+            <div id="profile">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        
+    </div>
+    <div class="pop">
+            <div id="message">
+                <p>Are you sure you want to Logout?</p>
+                <div>
+                    <button id="message_no">No</button>
+                    <a href="{{ url_for('logout')}}">Logout</a>
+                </div>
+            </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script2.js') }}"></script>
+    
+</body>
+</html>

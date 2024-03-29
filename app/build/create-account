@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Accpunt | Speedy</title>
+    <link rel="stylesheet" href="/static/styles/create_account.css">
+    <link rel="stylesheet" href="/static/styles/home.css">
+    <link rel="stylesheet" href="/static/styles/media.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+      </style>
+
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <img src="/static/images/logo.png">
+                <span>Speedy</span>
+            </div>
+        </header>
+        <div id="form_container">
+            
+<form method="POST" action="" novalidate>
+    <p id="title">Open a Speedy Account</p>
+    <input id="csrf_token" name="csrf_token" type="hidden" value="IjI0NzUxNDMxM2RiNDdiZDQ1YWY5OTU5YWM3N2U0NTg1ODA2OTlkM2Yi.ZTn7lQ.ARF32nL_F8XTngXhAUrdcW5i6dY">
+    <div class="firstname">
+         <p><label for="firstname">First name</label></p>
+         <p> <input class="input" id="firstname" name="firstname" placeholder="firstname" required size="70" type="text" value=""></p>
+         
+    </div>
+    <div class="lastname">
+        <p><label for="lastname">Last name</label> </p>
+        <p><input class="input" id="lastname" name="lastname" placeholder="lastname" required size="70" type="text" value=""></p>
+        
+    </div>
+    <div class="username">
+        <p><label for="username">Username</label> </p>
+        <p><input class="input" id="lastname" name="username" placeholder="username" required size="70" type="text" value=""></p>
+        
+    </div>
+    <div class="email">
+        <p> <label for="email">Email</label> </p>
+        <p> <input class="input" disabled="" id="email" name="email" size="70" type="text" value=""></p>
+        
+    </div>
+    <div class="phone_no">
+        <p> <label for="phonenumber">Phone number</label> </p>
+        <p> <input class="input" id="phonenumber" name="phonenumber" placeholder="08098923001" required size="70" type="text" value=""></p>
+        
+    </div>
+    <div id ="pin">
+        <p><label for="pin">Set Pin</label></p>
+        <p> <input class="input" id="pin" maxlength="4" minlength="4" name="pin" placeholder="0000" required size="70" type="password" value=""></p>
+        
+    </div>
+    <div class="dob">
+        <p> <label for="dob">Date of Birth:</label></p>
+        <p><input class="input" id="dob" max="2005-10-31" name="dob" required type="date" value=""></p>
+        
+    </div>
+    <div class="submit_cancel">
+        <input id="submit" name="create" type="submit" value="Create account">
+    </div>
+</form>
+<button id="cancel">Cancel</button>
+
+        </div>
+        <div class="pop">
+            <div id="message">
+                <p>Are you sure you want to cancel?</p>
+                <div>
+                    <button id="message_no">No</button>
+                    <a href="/logout">Cancel </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/script1.js"></script>
+</body>
+</html>

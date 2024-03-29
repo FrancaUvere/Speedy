@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/nav-bar.css') }}">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+  </style>
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+      <a href="">Speedy</a>
+    </div>
+    <div class="links">
+      <a href="{{ url_for('user_home', username=customer.username)}}">HOME</a>
+      <a href="{{ url_for('accounts', username=customer.username)}}">ACCOUNTS</a>
+      <a href="{{ url_for('transactions', username=customer.username )}}">TRANSACTIONS</a>
+      <a href="{{ url_for('services', username=customer.username) }}">SERVICES</a>
+    </div>
+    <div class="profile" title="View your profile">
+      <a href="{{ url_for('profile', username=customer.username)}}">{{ customer.username[0] }}</a>
+    </div>
+  </div>
+  
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+</body>
+</html>
+
+
+

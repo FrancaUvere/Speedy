@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+#container{
+    width: 17cm;
+    height: fit-content;
+    border: 2px solid #2f1452;
+    padding: 0.5cm;
+}
+
+header{
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#speedy p:first-child{
+    font-size: 35px;
+    font-family: 'Iceberg';
+}
+
+#speedy p:last-child{
+    font-size: 15px;
+}
+
+#customer_details{
+    font-size: 14px;
+    font-family: 'Baloo Thambi 2';
+}
+
+
+table{
+    margin-top: 1cm;
+}
+table th{
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Libre Caslon Text';
+    padding: 10px;
+    
+}
+
+table{
+    border-collapse: collapse;
+    border: none;
+}
+th, td{
+    border: 1px solid black;
+}
+table td{
+    padding: 5px;
+    font-size: 8px;
+    font-family: 'Libre Caslon Text';
+}

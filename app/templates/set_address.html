@@ -1,0 +1,61 @@
+{% extends 'create_account.html' %}
+
+{% block content %}
+<form action="" method="POST" novalidate>
+   {{ form.hidden_tag()}} 
+    <p id="title">Add your Address</p>
+    <div id="app_ num">
+        <p> {{ form.apartment_number.label }}</p>
+        <p> {{ form.apartment_number(size=70, placeholder="04", class="input") }}</p>
+        {% for error in form.apartment_number.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div id="strt_name">
+        <p> {{ form.street_name.label }}</p>
+        <p> {{ form.street_name(size=70, class="input")}}</p>
+        {% for error in form.street_name.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div id="city">
+        <p> {{form.city.label}}</p>
+        <p> {{ form.city(size=70, class="input")}} </p>
+        {% for error in form.city.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div>
+        <p> {{form.state.label}}</p>
+        <p> {{form.state(size=70, class="input")}}</p>
+        {% for error in form.state.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div>
+        <p> {{form.country.label }}</p>
+        <p> {{form.country(size=70, class="input")}}</p>
+        {% for error in form.country.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div>
+        <p> {{form.postal_code.label }}</p>
+        <p> {{form.postal_code(size=70, class="input")}}</p>
+        {% for error in form.postal_code.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div>
+        <p> {{ form.address_line_2.label }}</p>
+        <p> {{form.address_line_2(size=70, class="input")}}</p>
+        {% for error in form.address_line_2.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div id="submit/cancel">
+        {{ form.submit(id="submit")}}
+    </div>
+</form>
+<button id="cancel">Cancel</button>
+{% endblock %}

@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/transfer.css') }}">
+<div class="transfer">
+  <form action="" method="POST" novalidate>
+      {{ form.hidden_tag() }}
+      <div class="amount">
+        <p>{{ form.amount.label }}</p>
+        <p> {{ form.amount(placeholder='Amount', size=70, class="input", id="amount") }}</p>
+        {% for error in form.amount.errors %}
+        <p class="error"> {{ error }}</p>
+        {% endfor %}
+      </div>
+      <div class="acc-number">
+        <p>{{ form.acc_number.label }}</p>
+        <p> {{ form.acc_number(placeholder='012345679', size=70, class="input", id="account_number") }}</p>
+        {% for error in form.acc_number.errors %}
+        <p class="error"> {{ error }}</p>
+        {% endfor %}
+      </div>
+      <div class="bank-name">
+        <p>{{ form.bank_name.label }}</p>
+        <p> {{ form.bank_name(placeholder='Bank Name', size=70, class="input", id="bankname") }}</p>
+        {% for error in form.bank_name.errors %}
+        <p class="error"> {{ error }}</p>
+        {% endfor %}
+      </div>
+      <div class="from-acc">
+        <p>{{ form.from_acc.label }}</p>
+        <p> {{ form.from_acc(placeholder='Account number to be debited', size=70, class="input", id="fromacc") }}</p>
+        {% for error in form.from_acc.errors %}
+        <p class="error"> {{ error }}</p>
+        {% endfor %}
+      </div>
+      <div>
+        <div class="submit">
+          {{ form.submit(id="submit", class="submit-btn") }}
+        </div>
+      </div>
+  </form>
+</div>

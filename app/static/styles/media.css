@@ -1,0 +1,368 @@
+@media screen and (max-width: 589px){
+    #land_body{
+        padding: 30px;
+    }
+    #desc{
+        min-width: 300px;
+        text-align: center;
+    }
+    #image_side{
+       
+        position: relative;
+        top: 10em;
+    }
+    #logo {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+     }
+     #logo span{
+         font-size: 40px;
+     }
+     .photo{
+        display: none;
+     }
+     .transfer_desc{
+       
+        text-align: center;
+        width: 70%;
+     }
+    .info .transfer_desc  p:first-child{
+        font-size: 25px;
+    }
+    .info .transfer_desc p:nth-child(2) {
+        font-size: 15px;
+        line-height: 30px;
+    }
+    
+}
+@media screen and (min-width: 590px) and (max-width: 800px){
+    #image_side{
+
+        position: relative;
+        top: 8em;
+    }
+    #logo span{
+        font-size: 35px;
+        position: relative;
+        top: -17px;
+    }
+    #desc{
+        text-align: center;
+        max-width: 500px;
+    }
+    #nav{
+       margin-bottom: 30px;
+    }
+    #purple p:first-child{
+        display: none;
+     }
+   
+}
+@media screen and (max-width: 800px) {
+    #nav{
+        margin-bottom: 30px;
+     }
+    #land_head{
+        flex-direction: column-reverse;
+            text-align: center;
+            justify-content: center;
+    }
+    #description p{
+        margin: 40px auto;
+        width: 40%;
+        position: relative;
+        top: -7.5em;
+    }
+    .photo{
+        width: 200px;
+        height: 300px;
+    }
+    .div_sign{
+        padding: 60px 40px;
+    }
+    
+    #purple{
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .photo_2{
+        height: 300px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    #purple p:last-child{
+        width: 250px;
+    }
+    #purple p:first-child{
+       display: none;
+    }
+}
+
+@media  screen and (min-width: 590px) and (max-width: 919px) {
+    #nav{
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+    }
+    #logo img{
+        margin-top: 10px;
+    }
+
+    #nav_options{
+        margin-top: 25px;
+    }
+    #nav_options ul li{
+       padding: 10px 10px;
+    }
+    #nav_options ul li:last-child{
+        margin-right: 20px;
+     }
+    #logo span{
+        font-size: 35px;
+        position: relative;
+        top: -17px;
+    }
+
+    #land_body{
+        padding: 40px;
+        margin-top: -20px;
+    }
+    .transfer_desc{   
+        text-align: center;
+        width: 250px;
+     }
+    .info .transfer_desc  p:first-child{
+        font-size: 30px;
+        margin-bottom: 20px;
+        width: 300px;
+    }
+    .info .transfer_desc p:nth-child(2) {
+        font-size: 15px;
+        line-height: 40px;
+    }
+    .photo{
+        height: 300px;
+        width: 200px;
+    }
+    
+    
+}
+
+@media screen and (min-width: 920px){
+    #nav{
+        margin: 30px 40px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #logo{
+        display: flex;
+    }
+    #logo img{
+        margin-top: -7px;
+    }
+    #nav_options{
+        margin-top: 10px;
+    }
+    #nav_options ul li{
+       padding: 10px 20px 10px 40px;
+    }
+    #logo span{
+        font-size: 40px;
+        position: relative;
+        top: -17px;
+    }
+    #land_body {
+        padding: 60px 80px;
+        margin-top: -20px;
+    }
+    #nav_options ul li:last-child{
+        margin-left: 20px;
+        padding: 10px 20px;
+     }
+     #image_side{
+        margin-right: 40px;
+     }
+     #desc{
+        min-width: 300px;
+        max-width: 400px;
+        font-size: 18px;
+        line-height: 40px;
+        margin-bottom: 60px;
+     }
+     #description a:not(#description a:last-child){
+        position: relative;
+        top: -90px;
+        left: 50px;
+     }
+    #description a:last-child{
+        position: relative;
+        left: 150px;
+    }
+
+    .photo{
+        height: 300px;
+        width: 250px;
+    }
+    .transfer_desc{   
+        text-align: center;
+        width: 300px;
+     }
+    .info .transfer_desc  p:first-child{
+        font-size: 40px;
+        margin-bottom: 20px;
+        width: 350px;
+    }
+    .info .transfer_desc p:nth-child(2) {
+        font-size: 15px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .div_sign{
+        padding: 40px 40px;
+    }
+    
+    #purple{
+        margin-top: 40px;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .photo_2{
+        height: 300px;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    #purple p:last-child{
+        width: 250px;
+        line-height: 30px;
+        font-size: 17px;
+        text-align: left;
+        position: relative;
+        top: -5em;
+    }
+    #purple p:first-child{
+        font-size: 15px;
+        padding: 10px 10px;
+        width: 90px;
+        background-color: white;
+        color: #110111;
+        position: relative;
+        top: -8em;
+        border-radius: 14px;
+    }
+    
+}
+
+@media  screen and (min-width: 801px) and (max-width: 950px) {
+    #description p span {
+        font-size: 15px;
+    }
+    #description p{
+        margin-top: 40px;
+        font-size: 40px;
+    }
+    #desc{
+        font-size: 15px;
+        min-width: 250px;
+        max-width: 300px;
+        margin-bottom: 60px;
+     }
+    #description a:not(#description a:last-child){
+        position: relative;
+        top: -70px;
+     }
+    #description a:last-child{
+        position: relative;
+        left: 70px;
+    }
+    
+}
+
+
+@media screen and (max-width: 1200px) {
+    #land_body {
+        padding: 40px 40px 40px 70px;
+        margin-top: -20px;
+    }
+    #image_side{
+        margin-right: 5%;
+        background-position: -10px;
+        border-radius: 350px;
+        width: 350px;
+        height: 250px;
+        flex-shrink: 0;
+    
+    }
+    
+    
+    #description p span {
+        font-size: 20px;
+    }
+    #description p{
+        margin-top: 40px;
+        font-size: 40px;
+    }
+    #desc{
+        font-size: 17px;
+        margin-bottom: 80px;
+        line-height: 30px;
+     }
+     .photo{
+        height: 350px;
+    }
+
+}
+
+@media screen and (min-width: 950px) and (max-width: 1100px) {
+
+    .info {
+        padding: 100px;
+        align-items: center;
+    }
+    .div_sign{
+        padding: 50px 100px;
+    }
+    #purple p:first-child{
+        margin-right: -50px;
+    }
+    
+}
+
+@media screen and (min-width: 1101px) {
+    .info{
+        padding: 120px 190px;
+    }
+    .photo{
+        height: 400px;
+    }
+
+    .info .transfer_desc  p:first-child{
+        font-size: 45px;
+        margin-bottom: 40px;
+        width: 400px;
+    }
+    .info .transfer_desc p:nth-child(2) {
+        font-size: 15px;
+        line-height: 45px;
+        text-align: right;
+    }
+
+    
+}
+
+@media screen and (min-width: 1100px) {
+    .div_sign{
+        padding: 40px 200px;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .div_sign{
+        padding: 40px 250px;
+    }
+}
+
+

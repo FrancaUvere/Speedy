@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/static/styles/login.css">
+<div class="login">
+  <div class="bank-image">
+    <img src="/static/images/bank_image.png" alt="Bank Image">
+  </div>
+  <div class="login-form">
+    <div>
+      <div class="form-title">
+        <img src="/static/images/logo.png" alt="">
+        <h1>Speedy</h1>
+      </div>
+      <div class="form">
+        <form class="login-form" action="" method="POST" novalidate>
+          <input id="csrf_token" name="csrf_token" type="hidden" value="IjI0NzUxNDMxM2RiNDdiZDQ1YWY5OTU5YWM3N2U0NTg1ODA2OTlkM2Yi.ZTn7lQ.ARF32nL_F8XTngXhAUrdcW5i6dY">
+            <h1>Sign Up</h1>
+            <div class="form-group">
+                <label for="email">Email address</label><br>
+                <input id="email" name="email" placeholder="example@email.com" required size="20" type="text" value=""><br>
+                
+            </div>
+            <div class="form-group last-child">
+              <label for="password">Password</label><br>
+              <input id="password" name="password" placeholder="Enter your password" required size="20" type="password" value=""><br>
+              
+            </div>
+            <div class="form-group last-child">
+              <label for="password2">Confirm Password</label><br>
+              <input id="password2" name="password2" placeholder="Enter your password" required size="20" type="password" value=""><br>
+              
+            </div>
+            <div class="button">
+              <div><input class="submit-btn" id="submit" name="submit" type="submit" value="Register"></div>
+            </div>
+            <div class="cta">
+              <p class="signup">Already have an account? <a href="/login">Log in</a></p>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

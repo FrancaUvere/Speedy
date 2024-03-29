@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.bank-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.bank-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.login-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.form-title > h1 {
+  color: #63153F;
+  text-align: center;
+  font-family: Inter;
+  font-size: 32.404px;
+  font-weight: 800;
+}
+
+.login-form .form {
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #98A2B3;
+  background: #FFF;
+}
+
+.login-form form > h1 {
+  color: #63153F;
+  font-family: Inter;
+  font-size: 24px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.form-group > label {
+  color: #344054;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.form-group > input {
+  margin: 15px 0;
+  padding-left: 10px;
+  width: 100%;
+  width: 500px;
+  height: 44px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+}
+
+.bottom-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+
+.bottom-group a {
+  color: #63153F;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.submit-btn {
+  padding: 10px 18px;
+  margin: 50px 0;
+  font-family: Inter;
+  font-size: 16px;
+  align-items: center;
+  width: 500px;
+  color: #fff;
+  border-radius: 8px;
+  border: 1px solid #63153F;
+  background: #63153F;
+  box-shadow: 0px 1px 2px 0px 
+}
+
+.cta {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  color: #101010;
+}
+
+.signup > a {
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  color: #63153F;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .bank-image {
+    display: none;
+  } 
+}
+
+/*scrollbar*/
+::-webkit-scrollbar{
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #110526;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+  display: block;
+}
+
+::-webkit-scrollbar-track{
+  background-color: silver;
+}

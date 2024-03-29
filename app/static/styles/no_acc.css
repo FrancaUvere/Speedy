@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+#mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 213, 213, 0.4); /* Adjust the opacity as needed */
+    z-index: 9999;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+  #box_options{
+      margin: auto;
+      padding: 20px;
+      border-radius: 14px;
+      width: 60%;
+      height: fit-content;
+      box-shadow: 0px 4px 31px 6px rgba(0,0,0,0.75);
+     background-color: silver;
+     color: rgb(65, 42, 109);
+    
+  }
+
+#create{
+    padding: 5px 15px;
+    margin: 0 auto;
+    width: 90%;
+    max-height: 60px;
+    border-radius: 10px;
+    border: 1px solid rgba(206, 152, 243, 0.68);
+    color: #110526;
+    font-family: 'Marvel';
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#create p:first-child{
+    padding: 10px 0px;
+    font-family: 'Libre Caslon Text';
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#box_options p:not(#create p){
+    padding: 0px 15px;
+    margin: 0px auto;
+    width: 90%;
+}
+
+#create:hover{
+    box-shadow: 0px 4px 31px 6px rgba(0,0,0,0.75);
+}
+
+#box_options p:nth-child(3) a:hover{
+    font-family: 'Marvel', cursive;
+
+}
+
+#create a:active, #create a:visited, #create a{
+    color: #110526;
+    text-decoration: none;
+}
+
+/*scrollbar*/
+::-webkit-scrollbar{
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #110526;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+    display: block;
+}
+
+::-webkit-scrollbar-track{
+    background-color: silver;
+}

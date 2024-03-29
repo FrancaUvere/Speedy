@@ -1,0 +1,52 @@
+{% extends 'base_land.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/change.css') }}">
+<div id="contact_container">
+    <div id="form_contact">
+        <div id="contact_form">
+            <form action="" method="POST" novalidate>
+                {{ form.hidden_tag()}}
+                <p id="title">Contact Us</p>
+                <div id="name_email">
+                    <div id="name">
+                        <p>{{form.fullname.label}}</p>
+                        <p>{{form.fullname(size=24, class="input", placeholder="Fullname")}}</p>
+                        {% for error in form.fullname.errors %}
+                        <p id="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                    <div id="email">
+                        <p>{{form.email.label}}</p>
+                        <p>{{form.email(size=24, class="input", placeholder='Email')}}</p>
+                        {% for error in form.email.errors %}
+                        <p id="error">{{error}}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="subject">
+                    <p>{{form.subject.label}}</p>
+                    <p>{{form.subject(size=57, class="input", placeholder='Subject')}}</p>
+                    {% for error in form.subject.errors %}
+                        <p id="error">{{error}}</p>
+                        {% endfor %}
+                </div>
+                <div id="message">
+                    <p>{{form.message.label}}</p>
+                    <p>{{form.message(rows=5, cols=56, class="input", placeholder='Write your message')}}</p>
+                    {% for error in form.message.errors %}
+                        <p id="error">{{error}}</p>
+                        {% endfor %}
+                </div>
+                <div id="sub_but">
+                    {{form.submit(id="subm")}}
+                </div>
+                
+            </form>
+        </div>
+        <div id="contact_map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126844.19087173368!2d3.234397152915583!3d6.53671385494603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8e42c83aa793%3A0xb261a24b2951413a!2sOshodi%2FIsolo%2C%20102214%2C%20Lagos!5e0!3m2!1sen!2sng!4v1696655524095!5m2!1sen!2sng" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'user_profile_base.html' %}
+
+
+{% block content %}
+<div id="manage">
+    <p id="title">Manage your accounts</p>
+    <div id="account_title">
+        <div id="name">
+            <p>{{customer.first_name}}</p>
+            <p>{{customer.last_name}}</p>
+        </div>
+        <p>{{ customer.username}}</p>
+    </div>
+    <div class="delete tab">
+        <p><span>&#62;</span>Close account</p>
+        <p>Before an account is closed, please, make sure to transfer all funds present in the account to another account.
+            Failure to do so can result in loss of funds and an email will have to be written to the service provider to trace and recover
+            the funds. Transfers cannot be made with accounts that have been requested for closure.
+        </p>
+    </div>
+    <div class="change tab">
+        <p><span>&#62;</span>Change your account pin</p>
+        <p>Account pin can only be changed once a month. Make sure that your account pin is not exposed to any third party.</p>
+    </div>
+    <div id="manage_account">
+        <select id="select_account">
+            <option value="0" default>Select an account</option>
+            {% for account in accounts %}
+            <option value="{{account.id}}">{{account.account_number}} - {{account.acc_type}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="fmessages">
+        {% for message in messages %}
+            <li class="fmessage">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+    <p id="jmessage" class="fmessage"></p>
+    <div class="acc_buttons">
+        <button>Change Account Pin</button>
+        <button href="{{url_for('close_account', username=username)}}">Close An Account</button>   
+</div>
+{% if form %}
+<div class="manage_pop first">
+    <div id="verify_box">
+        <form action="" method="POST" id="acc_manage_form" novalidate>
+            {{ form.hidden_tag() }}
+            <div id="verify">
+                <p>{{form.pin.label}}</p>
+                <p>{{form.pin(class="input", size=10)}}</p>
+                {% for error in form.pin.errors %}
+                <p class="errors">{{error}}</p>
+                {% endfor %}
+            </div>
+            <div >
+                {{form.verify(id="submit")}}
+                <a class="pop_cancel">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% if form3 %}
+<div class="manage_pop second">
+    <div id="delete_box">
+        <form action="" method="POST" id="del_form" novalidate>
+            {{ form3.hidden_tag() }}
+            <p class="title" id="close">Close An Account Form</p>
+            <div id="info_acc">
+                <p>{{form3.acc_num.label}}</p>
+                <p>{{form3.acc_num(class="input", size=70)}}</p>
+                {% for error in form3.acc_num.errors %}
+                <p class="errors">{{error}}</p>
+                {% endfor %}
+            </div>
+            <div id="reason">
+                <p>{{form3.reason.label}}</p>
+                <select class="input" name="{{form3.reason.name}}">
+                    {% for choice, label in form3.reason.choices %}
+                    <option value="{{choice}}">{{label}}</option>
+                    {% endfor %}
+                </select>
+                {% for error in form3.reason.errors %}
+                <p class="errors">{{error}}</p>
+                {% endfor %}
+            </div>
+            <div id="delete">
+                <p>{{form3.dpin.label}}</p>
+                <p>{{form3.dpin(class="input", size=10)}}</p>
+                {% for error in form3.dpin.errors %}
+                <p class="errors">{{error}}</p>
+                {% endfor %}
+            </div>
+            <p class="warning"><span>*</span>Closure requests cannot be withdrawn. Transfers cannot be made with accounts that have been requested for closure.</p>
+            <div class="del_buttons">
+                <p>{{form3.close(id="submit")}}</p>
+                <a href="{{url_for('manage_accounts', username=username)}}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% if form2 %}
+<div class="manage_pop next">
+    <div id="verify_box">
+        <form action="" method="POST" id="acc_manage_form" novalidate>
+            {{ form2.hidden_tag() }}
+            <div id="verify">
+                <p>{{form2.pin.label}}</p>
+                <p>{{form2.pin(class="input", size=10)}}</p>
+                {% for error in form2.pin.errors %}
+                <p class="errors">{{error}}</p>
+                {% endfor %}
+            </div>
+            <div >
+                {{form2.change(id="submit")}}
+                <a class="pop_cancel" href="{{url_for('manage_accounts', username=username)}}">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

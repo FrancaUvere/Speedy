@@ -1,0 +1,213 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+ .user_home {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px auto;
+ }
+
+ .top-sec {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+ }
+
+ .bal-box {
+  min-width: 500px;
+  margin: 0 0 0 7%;
+  padding: 30px 30px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #63153F;
+  box-shadow: 0px 10px 20px 0px #ccc;
+ }
+
+ .bal-box p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+ }
+
+ .acc-sta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+ }
+
+ .num-type {
+  display: flex;
+  justify-content: space-between;
+ }
+
+ .type {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+ }
+
+ .act-btn {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+.act-btn a {
+  color: #fff;
+  text-decoration: none;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 14px;
+  background: #63153F;
+  box-shadow: 0px 10px 20px 0px #ccc;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.act-btn a:hover {
+  background-color: #fff;
+  color: #63153F;
+  transform: translateY(-2px);
+}
+
+.act-btn .transf {
+  padding: 12px 60px;
+  margin-bottom: 10px;
+}
+
+.act-btn .transac {
+  padding: 12px 48px;
+  margin-bottom: 10px;
+}
+
+.act-btn .creat {
+  padding: 12px 55px;
+  margin-bottom: -13px;
+}
+
+.bot-sec {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  min-width: 1000px;
+}
+
+.accounts {
+  padding: 20px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.accounts p {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.accounts a {
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 0px #ccc;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.accounts a:hover {
+  background-color: #63153F;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.a-s {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+
+.a-s .sav {
+  padding: 18px 99px;
+}
+
+.a-s .cur {
+  padding: 18px 100px;
+}
+
+.a-s .comp {
+  padding: 18px 92px;
+}
+
+.cards {
+  padding: 20px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+.cards p {
+  color: #000;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.cards a {
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 0px #ccc;
+  transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.cards a:hover {
+  background-color: #63153F;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.n-d {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  margin-top: 35px;
+}
+
+
+.n-d .nai {
+  padding: 18px 99px;
+}
+
+.n-d .dol {
+  padding: 18px 100px;
+}
+
+.n-d .prep {
+  padding: 18px 117px;
+}
+
+/*scroollbar*/
+::-webkit-scrollbar{
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #110526;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-button{
+  display: block;
+}
+
+::-webkit-scrollbar-track{
+  background-color: silver;
+}

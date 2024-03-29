@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/static/styles/login.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap" rel="stylesheet">
+<div class="login">
+  <div class="bank-image">
+    <img src="/static/images/bank_image.png" alt="Bank Image">
+  </div>
+  <div class="login-form">
+    <div class="logo-form">
+      <div class="form-title">
+        <img src="/static/images/logo.png" alt="">
+        <h1>Speedy</h1>
+      </div>
+      
+    
+    
+      <div class="form">
+        <form class="login-form" action="" method="POST" novalidate>
+          <input id="csrf_token" name="csrf_token" type="hidden" value="IjI0NzUxNDMxM2RiNDdiZDQ1YWY5OTU5YWM3N2U0NTg1ODA2OTlkM2Yi.ZTn7lQ.ARF32nL_F8XTngXhAUrdcW5i6dY">
+            <h1>Sign In</h1>
+            <div class="form-group">
+                <label for="email">Email address</label><br>
+                <input id="email" maxlength="40" minlength="7" name="email" placeholder="example@email.com" required size="40" type="text" value=""><br>
+                
+            </div>
+            <div class="form-group last-child">
+              <label for="password">Password</label><br>
+              <input id="password" name="password" placeholder="Enter your password" required size="20" type="password" value=""><br>
+              
+            </div>
+            <div class="bottom-group">
+              <a href="">Forgot Password?</a>
+              <div>
+                <div><input id="remember_me" name="remember_me" type="checkbox" value="y"> <label for="remember_me">Remember Me</label></div>
+              </div>
+            </div>
+            <div class="button">
+              <div><input class="submit-btn" id="submit" name="submit" type="submit" value="Sign In"></div>
+            </div>
+            <div class="cta">
+              <p class="signup">Don't have an account? <a href="/signup">Sign Up now</a></p>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>

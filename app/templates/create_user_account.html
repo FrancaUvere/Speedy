@@ -1,0 +1,45 @@
+{% extends 'nav-bar.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/create_account.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/media.css')}}">
+<div id="form_container">
+<form method="POST" action="" id="new" novalidate>
+    <p id="title">Open a Speedy Account</p>
+    {{ form.hidden_tag()}}
+    <div class="email">
+        <p> {{ form.email.label }} </p>
+        <p> {{ form.email(size=70, value=current_user.email, class="input", disabled=disabled) }}</p>
+        {% for error in form.email.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="phone_no">
+        <p> {{form.phonenumber.label }} </p>
+        <p> {{form.phonenumber(value=customer.phone_number, size=70, class="input", disabled=disabled) }}</p>
+        {% for error in form.phonenumber.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div id ="pin">
+        <p>{{ form.pin.label }}</p>
+        <p> {{ form.pin(class="input", size=70, placeholder="0000") }}</p>
+        {% for error in form.pin.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="dob">
+        <p> {{ form.dob.label }}</p>
+        <p>{{ form.dob(max='2005-10-31', value=customer.date_time(customer.dob), class="input", disabled=disabled) }}</p>
+        {% for error in form.dob.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="submit_cancel">
+        {{ form.create(id="submit") }}
+    </div>
+</form>
+<a id="cancel" href="{{url_for('accounts', username=customer.username)}}">Cancel</a>
+</div>
+{% endblock %}

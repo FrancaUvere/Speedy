@@ -1,0 +1,61 @@
+{% extends 'create_account.html' %}
+
+{% block content %}
+<form method="POST" action="" novalidate>
+    <p id="title">Open a Speedy Account</p>
+    {{ form.hidden_tag()}}
+    <div class="firstname">
+         <p>{{ form.firstname.label }}</p>
+         <p> {{ form.firstname(placeholder='firstname', size=70, class="input", id="firstname") }}</p>
+         {% for error in form.firstname.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="lastname">
+        <p>{{ form.lastname.label }} </p>
+        <p>{{ form.lastname(placeholder='lastname', size=70, class="input", id="lastname") }}</p>
+        {% for error in form.lastname.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="username">
+        <p>{{ form.username.label }} </p>
+        <p>{{ form.username(placeholder='username', size=70, class="input", id="lastname") }}</p>
+        {% for error in form.username.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="email">
+        <p> {{ form.email.label }} </p>
+        <p> {{ form.email(size=70, value=current_user.email, class="input", disabled=disabled) }}</p>
+        {% for error in form.email.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="phone_no">
+        <p> {{form.phonenumber.label }} </p>
+        <p> {{form.phonenumber(placeholder='08098923001', size=70, class="input") }}</p>
+        {% for error in form.phonenumber.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div id ="pin">
+        <p>{{ form.pin.label }}</p>
+        <p> {{ form.pin(class="input", size=70, placeholder="0000") }}</p>
+        {% for error in form.pin.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="dob">
+        <p> {{ form.dob.label }}</p>
+        <p>{{ form.dob(max='2005-10-31', class="input") }}</p>
+        {% for error in form.dob.errors %}
+         <p class="error"> {{ error }}</p>
+         {% endfor %}
+    </div>
+    <div class="submit_cancel">
+        {{ form.create(id="submit") }}
+    </div>
+</form>
+<button id="cancel">Cancel</button>
+{% endblock %}

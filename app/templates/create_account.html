@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Accpunt | Speedy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/create_account.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/media.css')}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+      </style>
+
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <img src="{{ url_for('static', filename='images/logo.png')}}">
+                <span>Speedy</span>
+            </div>
+        </header>
+        <div id="form_container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="pop">
+            <div id="message">
+                <p>Are you sure you want to cancel?</p>
+                <div>
+                    <button id="message_no">No</button>
+                    <a href="{{ url_for('logout')}}">Cancel </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script1.js') }}"></script>
+</body>
+</html>

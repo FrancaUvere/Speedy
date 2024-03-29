@@ -1,0 +1,80 @@
+{% extends 'user_profile_base.html' %}
+{% block content %}
+
+<div id="profile_pic">
+    <div id="pic"></div>
+    <p>{{username}}</p>
+</div>
+<hr>
+<div id="profile_buttons">
+    <button id="show_cus">Customer Information</button>
+    <button id="show_acc">Accounts</button>
+</div>
+<div class="customer_information">
+    <div id="customer_details">
+        <p class="title">  Customer name</p>
+        <div class="param">
+            <p>Firstname</p>
+            <p>Lastname</p>
+        </div>
+        <div class="data">
+            <p>{{ customer.first_name}}</p>
+            <p> {{ customer.last_name }}</p>
+        </div>
+        <div class="param">
+            <p>Phonenumber</p>
+            <p>Email</p>
+        </div>
+        <div class="data">
+            <p>{{ customer.phone_number }}</p>
+            <p>{{ customer.email }}</p>
+        </div>
+        <div class="param">
+            <p> Date of Birth: </p>
+            <p>Date User Account Created: </p>
+        </div>
+        <div class="data">
+            <p>{{ customer.format_time(customer.dob) }}</p>
+            <p>{{ customer.format_time(customer.date_created) }}</p>
+        </div>
+        <p class="title">Address</p>
+        <div class="param">
+            <p>Apartment Number</p>
+            <p>Street Name</p>
+        </div>
+        <div class="data">
+            <p>{{ customer.get_address().apartment_number }}</p>
+            <p>{{ customer.get_address().street_name}}</p>
+        </div>
+        <div class="param">
+            <p>City</p>
+            <p>State</p>
+        </div>
+        <div class="data">
+            <p>{{ customer.get_address().city }}</p>
+            <p>{{ customer.get_address().state }}</p>
+        </div>
+        <div class="param">
+            <p> Country </p>
+        </div>
+        <div class="data">
+            <p>{{ customer.get_address().country }}</p>
+        </div>
+    </div>
+</div>
+<div id="account_details">
+    <div id="account_info">
+    {% for account in customer.get_accounts() %}
+        <div class="param">
+            <p>Account Number</p>
+            <p>Account State</p>
+        </div>
+        <div class="data">
+            <p> {{ account.account_number }}</p>
+            <p> {{ account.acc_type}}</p>
+        </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

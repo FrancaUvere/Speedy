@@ -1,0 +1,19 @@
+{% extends 'login.html' %}
+{% block no_acc %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/no_acc.css')}}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap" rel="stylesheet">
+    <div id="mask">
+        <div id="box_options">
+            <div id="create">
+            <p><a href="{{ url_for('create_account')}}"> Open an Account  </a></p>
+            </div>
+            <p> Not ready to? </p>
+            <p>You can <a href="{{ url_for('logout')}}">Come back Later</a></p>
+        </div>
+    </div>
+{% endblock %}
+
+

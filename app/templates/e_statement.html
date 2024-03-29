@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/e_statement.css')}}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+      </style>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="speedy">
+                <p>Speedy</p>
+                <p>Finnancing made Easy</p>
+            </div>
+            <div id="customer_details">
+                <p> Account Name: {{ customer.first_name}} {{customer.last_name}}</p>
+                <p>Account type: {{account.acc_type}}</p>
+                <p>Account number: {{account.account_number}}</p>
+                <p>Account balance: {{account.balance}}</p>
+            </div>
+        </header>
+        <main>
+            <p>Transaction history</p>
+            <table clas="transaction_table">
+                <thead>
+                    <tr>
+                        <th>Transaction Date</th>
+                        <th>Transaction Reference</th>
+                        <th>Details</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Initial Balance</th>
+                        <th>Final Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                    <tr>
+                        <td>{{transaction.format_time(transaction.timestamp)}}</td>
+                        <td>{{transaction.ref}}</td>
+                        <td>{{transaction.description}}</td>
+                        <td>{{transaction.transaction_type}}</td>
+                        <td>{{transaction.amount}}</td>
+                        <td>{{transaction.initial_balance}}</td>
+                        <td>{{transaction.balance}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/_transactions.css') }}">
+  <tr valign="top">
+    <td >{{ transaction.format_time(transaction.timestamp) }}</td>
+    <td>{{transaction.cus_name}}<br>{{transaction.bank_name}}</td>
+    <td>{{ transaction.description | default("NIL") }}</td>
+    <td>{{ transaction.transaction_type }}</td>
+    <td>{{ transaction.parse_balance(transaction.amount) }}</td>
+  </tr>

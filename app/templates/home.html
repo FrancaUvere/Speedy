@@ -1,0 +1,65 @@
+{% extends 'base_land.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/media.css')}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Iceberg&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap" rel="stylesheet">
+<div id="land_body">
+    <div id="land_head">
+        <div id="description">
+            <p><span> Seamless</span>Online Banking</p>
+            <div id="desc">
+                In a world driven by digital innovation, managing your finances should be effortless and efficient. That's where Speedy, your trusted online banking companion, comes into play
+            </div>
+            <a href="{{ url_for('register')}}">Sign Up</a>
+            <a href="{{ url_for('login')}}">Log in</a>
+        </div>
+        <div id="image_side"></div>
+    </div> 
+</div>
+<article class="info">
+         <div class="transfer_desc">
+            <p> BANK TRANSFERS</p>
+            <p>Speedy empowers you to take control of your finances. Set up recurring payments, track expenses, and plan for the future effortlessly.
+            </p>
+            <div class="img"><span>&#10030;&#10030;&#10030;</span></div>
+         </div>
+         <div class="photo ph_one">
+         </div>
+    </article>
+    <article class="info">
+        <div class="transfer_desc">
+            <p>POINTS & REWARDS</p>
+            <p>Earn points, cashback, or other rewards for using online banking. It's like getting a surprise gift every time you bank!
+            </p>
+            <div class="img rev"><span>&#10030;&#10030;&#10030;</span></div>
+        </div>
+        <div class="photo ph_two">
+        </div>
+   </article>
+   <article class="info">
+        <div class="transfer_desc">
+            <p>24/7 SUPPORT</p>
+            <p>Need assistance? Our dedicated customer support team is available around the clock to assist you.
+            </p>
+            <div class="img"><span>&#10030;&#10029;&#10030;</span></div>
+        </div>
+        <div class="photo ph_three">
+            
+        </div>
+</article>
+<div class="div_sign">
+    <p> Sign Up with Speedy</p>
+    <div id="purple">
+        <p>Sign Up</p>
+        <div class="photo_2"></div>
+        <p>Sign up with your email and begin enjoying quick transactions in a matter of minutes</p>
+    </div>
+</div>
+<div id="partners">
+    <p>Our Partner</p>
+    <p>Dainty Bank</p>
+</div>
+{% endblock %}

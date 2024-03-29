@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speedy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/media.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Baloo+Thambi+2&family=Cherry+Bomb+One&family=Libre+Caslon+Text&family=Lobster+Two&family=Marvel:wght@700&display=swap');
+      </style>
+   </head>
+<body>
+    <div id="container">
+        <div id="nav">
+            <div id="logo">
+                <img src="{{ url_for('static', filename='images/logo.png')}}">
+                <span>Speedy</span>
+            </div>
+            <div id="nav_options">
+                <ul>
+                    <li><a href="{{url_for('home')}}">Personal</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="{{url_for('land_contact')}}">Contact Us</a></li>
+                    <li><a id="log" href="{{ url_for('login')}}">Log in</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div id="last_div">
+        <div>
+            <ul>
+                <li class="head">Company</li>
+                <li><a>About us</a></li>
+                <li><a>Join our team</a></li>
+                <li><a>Contact us</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li class="head">Resources</li>
+                <li><a>Terms of service</a></li>
+                <li><a>Documentation</a></li>
+                <li><a>Security</a></li>
+                <li><a>Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div>
+            <p>Address</p>
+            <p>75, Ogumepon street, Ojota, Lagos, Nigeria </p>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <img src="{{ url_for('static', filename='images/logo.png')}}">
+            <span>Speedy</span>
+        </div>
+        <div>@ 2023 Speedy Digital Services</div>
+        <div id="social"><ul class="social-icons">
+            <li><a><i class="fab fa-facebook"></i></a></li>
+            <li><a ><i class="fab fa-twitter"></i></a></li>
+            <li><a ><i class="fab fa-instagram"></i></a></li>
+          </ul></div>
+    </footer>
+</body>
+
+
+</html>

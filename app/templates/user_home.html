@@ -1,0 +1,61 @@
+{% extends 'nav-bar.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ username }} | Speedy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/user_home.css'   ) }}">
+</head>
+    <div class="user_home">
+        <div class="top-sec">
+            <div class="bal-box">
+                <div class="acc-sta">
+                    <div class="balance">
+                        <p>Balance</p>
+                        <p>&#8358;{{ account.parse_balance() }}</p>
+                    </div>
+                    <div class="status">
+                        <p>Status</p>
+                        <p>{{ account.acc_type}}</p>
+                    </div>
+                </div>
+                <div class="num-type">
+                    <div class="num">
+                        <p>Account Number</p>
+                        <p>{{ account.account_number}}</p>
+                    </div>
+                    <div class="type">
+                        <p>Type</p>
+                        <p>Savings Account</p>
+                    </div>
+                </div>
+            </div>
+            <div class="act-btn">
+                <a href="{{ url_for('transfer', username=customer.username) }}" class="transf">Make a Transfer</a><br>
+                <a href="{{ url_for('transactions', username=customer.username) }}" class="transac">Transaction History</a><br>
+                <a href="{{ url_for('create_acc', username=customer.username) }}" class="creat">Create an Account</a><br>
+            </div>
+        </div>
+        <div class="bot-sec">
+            <div class="accounts">
+                <p>Accounts</p>
+                <p>Here are your options for a fulfiling bank experience.</p>
+                <div class="a-s">
+                    <a href="{{ url_for('accounts', username=customer.username)}}" class="sav">Savings Accounts</a><br>
+                    <a class="cur">Current Accounts</a><br>
+                    <a href="{{ url_for('accounts', username=customer.username)}}" class="comp">Compare Accounts</a><br>
+                </div>
+            </div>
+            <div class="cards">
+                <p>Cards (coming soon)</p>
+                <p>Make your money flexible</p>
+                <div class="n-d">
+                    <a class="nai">Naira Debit Cards</a><br>
+                    <a class="dol">Dollar Debit Cards</a><br>
+                    <a class="prep">Prepaid Cards</a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
+{% endblock %}

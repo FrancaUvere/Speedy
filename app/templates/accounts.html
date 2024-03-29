@@ -1,0 +1,42 @@
+{% extends 'nav-bar.html' %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/accounts.css') }}">
+<div class="accounts">
+  <div class="bank-btn">
+    <p>Bank Accounts</p>
+    <a href="{{ url_for('create_acc', username=customer.username) }}">Create Bank Account</a>
+  </div>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="fmessages">
+        {% for message in messages %}
+            <li class="fmessage">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+  <div class="account-grid">
+    {% for account in accounts %}
+    <a href="/{{customer.username}}/accounts/{{account.id}}">
+      <div class="account-tile" account-id="{{ account.id }}">
+        <div class="name-icon">
+          <div class="name">
+            <p class="bk-name">{{account.bank_name}}</p>
+            <p class="status">{{account.acc_type}}</p>
+            <p class="status">{{account.account_number}}</p>
+          </div>
+          <div class="icon">
+            <img src="{{ url_for('static', filename='images/bank-icon.png') }}" alt="">
+          </div>
+        </div>
+        <div class="amount">
+          <p>&#8358;{{ account.parse_balance() }}</p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
